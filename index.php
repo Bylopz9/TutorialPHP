@@ -21,19 +21,20 @@ $Nombre = "Manuel";
 $Apellido = "Lopez";
 
 echo "Soy $Nombre". " $Apellido <br>";  
+/* Con PHP podemos llamar funciones de otros archivos con las sentencias include y require  */
+include ("funciones.php");
 
-/* Declaramos funciones cono si de la misma manera que ne java */
-
-function nombrecompleto (){
-    
-    echo "Mi nombre es Manuel Lopez Salas <br>";
-}
-
-echo "separando servicios <br>";
 
 nombrecompleto();
+nombrecompleto();
+nombrecompleto();
+nombrecompleto();
+nombrecompleto();
+
 
 ?>
+
+
 
 </body>
 </html>
