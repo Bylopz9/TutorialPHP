@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,18 +23,60 @@ $Apellido = "Lopez";
 echo "Soy $Nombre". " $Apellido <br>";  
 /* Con PHP podemos llamar funciones de otros archivos con las sentencias include y require  */
 include ("funciones.php");
-
-
+/* require ("funciones.php"); */
 nombrecompleto();
 nombrecompleto();
 nombrecompleto();
 nombrecompleto();
 nombrecompleto();
 
+/* Podemos utilizar las variables dentro de las funciones sin embargo para hacer esto se debe
+llamar con la instruccion global */
+
+function llamanombre(){
+    global $Nombre;
+    global $Apellido;
+
+    $nombre = "Soy $Nombre" . " y mo apellido es: $Apellido <br>"; 
+    echo $nombre;
+}
+
+llamanombre();
+
+/* Variables estaticas */
+/* las variables estaticas son aquellas que se utilizan y guardan su valor para poder
+ reultilzar el valor que ya tiene la variable*/
+/* En este ejemplo hacemos que la funcion incremente en 1 la variable conta
+y al llamar la función varias veces esta siga incrementando el valor */
+function contador(){
+    static $conta=0;
+    $conta++;
+
+    echo $conta . "<br>";
+}
+
+contador();
+contador();
+contador();
+contador();
+contador();
+contador();
+/* En este ejemplo se visualiza que sin declarar las variables estatic el contador no se da y
+siempre arrojara el valor una y otra vez en 1 */
+
+function contadorerro(){
+    $conta=0;
+    $conta++;
+
+    echo $conta . "<br>";
+}
+
+contadorerro();
+contadorerro();
+contadorerro();
+contadorerro();
 
 ?>
-
-
 
 </body>
 </html>

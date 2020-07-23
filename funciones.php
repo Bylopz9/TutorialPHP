@@ -5,7 +5,12 @@ function nombrecompleto (){
     
     echo "Mi nombre es Manuel López Salas <br>";
 }
+?>
+<?php
+    $Nombre = "Manuel";
 
-echo "separando servicios <br>";
+    function damenombre() {
+        $Nombre= "Viridiana <br>";
 
+    }
 ?>
