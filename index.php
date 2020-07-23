@@ -105,8 +105,75 @@ $resultado1=strcasecmp($compara1,$compara2);
 
 echo "<P class=\" color\"> Las variables son: $resultado1</P>";
 
+/* CONSTANTES */
+
+define("AUTOR","Manuel",true);
+
+echo "<P class=\" color\"> El autor es: " . AUTOR . "</P>";
+
+/* Las constantes no se pueden redefinir */
+
+/*  */
+?>
+<hr>
+<form name="Cualculadora" action="" method="post">
+<div class="contenedor">
+<label for="num1"></label>
+<input type="text" name="num1" id="num1">
+<label for="num2"></label>
+<input type="text" name="num2" id="num2">
+<label for="oper"></label>
+<select name="oper" id="oper">
+<option >suma</option>
+<option >resta</option>
+<option >multiplicacion</option>
+<option >dividir</option>
+<option >modulo</option>
+</select>
+</div>
+
+<div>
+<input type="submit" name="boton" id="boton" value="Enviar" onclick="prueba">
+</div>
+
+</form>
+<br>
+<?php
+
+if (isset($_POST["boton"])){
+
+    $nume1=$_POST["num1"];
+    $nume2=$_POST["num2"];
+    $operacion=$_POST["oper"];
+
+    if(!strcmp("suma",$operacion)){
+        
+        echo"<h1 class=\"color\"> El resultado es: " . ($nume1 + $nume2) . "</h1>";
+    }
+  
+    if(!strcmp("resta",$operacion)){
+        
+        echo"<h1 class=\"color\"> El resultado es: " . ($nume1 - $nume2) . "</h1>";
+    }
+
+    if(!strcmp("multiplicacion",$operacion)){
+        
+        echo"<h1 class=\"color\"> El resultado es: " . ($nume1 * $nume2) . "</h1>";
+    }
+    if(!strcmp("dividir",$operacion)){
+        
+        echo"<h1 class=\"color\"> El resultado es: " . ($nume1 / $nume2) . "</h1>";
+    }
+    if(!strcmp("modulo",$operacion)){
+        
+        echo"<h1 class=\"color\"> El resultado es: " . ($nume1 % $nume2) . "</h1>";
+    }
+    
+}
+
 
 ?>
+
 
 </body>
 </html>
