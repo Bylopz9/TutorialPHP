@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    .color{
+        color: #F00;
+        border: 2px solid black;
+        font-weight: bolder;
+    }
+    </style>
 </head>
 <body>
     
@@ -75,6 +82,29 @@ contadorerro();
 contadorerro();
 contadorerro();
 contadorerro();
+/* En php podemos colocar dentro de los echo las etiquetas de html
+y para declarar las comillas de las clases de la siguinete manera */
+
+/* CON UNA COMILLA SIMPLE */
+echo "<p class='color'>Gola mundo</p>";
+/* CON DIAGONAL INVERSA */
+echo "<p class=\" color \">Gola mundo</p>";
+echo "<hr>";
+$compara1 = "casa";
+$compara2 = "CASA";
+
+$resultado=strcmp($compara1,$compara2); /* Esta funcion compara dos variables tomando en cuenta mayusculas 
+y minusculas si son diferentes arroja un 1 */
+
+echo "<P class=\" color\"> Las variables son: $resultado</P>";
+
+/* la funcion strcasecmp compara dos variables pero en este caso no toma en cuenta si las variables 
+tiene mayusculas */
+$resultado1=strcasecmp($compara1,$compara2);
+
+
+echo "<P class=\" color\"> Las variables son: $resultado1</P>";
+
 
 ?>
 
